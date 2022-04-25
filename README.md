@@ -1,11 +1,19 @@
-# [Título del trabajo]
+# [LA BUSQUEDA DEL ORO PERDIDO]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[En este proyecto, un laberinto de diferentes dificultades y con tiempo limitado, podra disfrutar de un juego donde
+encontrar el motin es el objetivo. Podra encontrarse con diferentes obstaculos, los cuales ayudaran al jugador a encontrar la salida.
+Podran haber hasta 5 jugadores, los cuales competirán por cual es el primero en salir.]
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+[SERGIO SIMÓN HERREA sergio.simon@alumnos.upm.es
+ MIQUEL DE ZABALA PRATS
+ YERAY MUÑOZ GARCIA]
 
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+[Crear un laberinto con diferentes dificultades y con tiempo limitado
+ Realizar las diferentes funciones necesarias para que puedan ser utilizadas las veces que se necesiten sin programarlas repetidas veces
+ Buscar una dinámica de juego con una historia que enganche
+ Realizar pruebas y ayudas que ayuden al jugador a salir del laberinto
+ ]
