@@ -18,7 +18,7 @@ int main()
     ModosMenu:
     do
     {
-        printf("\n\n\tEscoja uno del los siguientes modos de juego:\n \n\t\t1.Modo facil\n\t\t2.Modo medio\n\t\t3.Modo dificil\n\t\t4.Modo competicion\n\t\t5.Modo extremo\n\t\t6.SALIR DEL JUEGO\n");
+        printf("\n\n\tEscoja uno del los siguientes modos de juego:\n \n\t\t1.Modo facil\n\t\t2.Modo intermedio\n\t\t3.Modo dificil\n\t\t4.Modo competicion\n\t\t5.Modo extremo\n\t\t6.SALIR DEL JUEGO\n");
         fflush(stdin);
         scanf("%i", &modo);
     }while(modo != 1 && modo != 2 && modo != 3 && modo != 4 && modo != 5 && modo != 6);//Elegir modo
@@ -48,27 +48,31 @@ int main()
                         case 'a':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 10 min-------\n");
+                                //Jugar
                             }break;
 
                         case 'b':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 5 min-------\n");
+                                //Jugar
                             }break;
 
                         case 'c':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 1 min-------\n");
+                                //Jugar
                             }break;
 
                         case 'd':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ a elegir-------\n");
+                                //Jugar
                             }break;
 
                         case 'e':
                             {
-                                goto ModoFacilMenu;
-                            }break;//Volver a elegir si quiere hacer contrarreloj en modo facil
+                                goto ModoFacilMenu;//Volver a elegir si quiere hacer contrarreloj en modo facil
+                            }break;
                         }
 
                     }break;
@@ -93,6 +97,65 @@ int main()
             ModoIntermedioMenu:
 
             printf("\n\n\t\t\t\t------------Has elegido el modo INTERMEDIO------------\n\n");
+            printf("\n\n\tQuiere hacerlo a contrareloj\n \n\t\t1.Si\n\t\t2.No\n\t\t3.Volver atras\n");
+            scanf("%i", &contrarreloj);//Elegir si quiere hacer contrarreloj
+
+            switch(contrarreloj)
+            {
+            case 1:
+                {
+                    fflush(stdin);
+                    printf("\n\n\t\t\t\t--------Has elegido el modo INTERMEDIO con CONTRARRELOJ--------\n");
+                    printf("\n\n\tEn que tiempo quiere hacerlo\n \n\t\ta) 10 minutos\n\t\tb) 5 minutos\n\t\tc) 1 minuto\n\t\td) Tiempo a elegir\n\t\te) Volver atras\n");
+                    scanf("%c", &tiempo);//Elegir en cuanto tiempo quiere hacer la contrarreloj
+
+                    switch(tiempo)
+                    {
+                        case 'a':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 10 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'b':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 5 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'c':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 1 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'd':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ a elegir-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'e':
+                            {
+                                goto ModoIntermedioMenu;//Volver a elegir si quiere hacer contrarreloj en modo intermedio
+                            }break;
+                        }
+
+                    }break;
+
+            case 2:
+                {
+                    fflush(stdin);
+                    //goto Juego;
+                }break;
+
+            case 3:
+                {
+                    fflush(stdin);
+                    goto ModosMenu;//Volver a elegir el modo que quiera
+                }break;
+            }
+
 
         }break;//Modo intermedio
 
@@ -101,6 +164,64 @@ int main()
             ModoDificilMenu:
 
             printf("\n\n\t\t\t\t------------Has elegido el modo DIFICIL------------\n\n");
+            printf("\n\n\tQuiere hacerlo a contrareloj\n \n\t\t1.Si\n\t\t2.No\n\t\t3.Volver atras\n");
+            scanf("%i", &contrarreloj);//Elegir si quiere hacer contrarreloj
+
+            switch(contrarreloj)
+            {
+            case 1:
+                {
+                    fflush(stdin);
+                    printf("\n\n\t\t\t\t--------Has elegido el modo DIFICIL con CONTRARRELOJ--------\n");
+                    printf("\n\n\tEn que tiempo quiere hacerlo\n \n\t\ta) 10 minutos\n\t\tb) 5 minutos\n\t\tc) 1 minuto\n\t\td) Tiempo a elegir\n\t\te) Volver atras\n");
+                    scanf("%c", &tiempo);//Elegir en cuanto tiempo quiere hacer la contrarreloj
+
+                    switch(tiempo)
+                    {
+                        case 'a':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 10 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'b':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 5 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'c':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 1 min-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'd':
+                            {
+                                printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ a elegir-------\n");
+                                //Jugar
+                            }break;
+
+                        case 'e':
+                            {
+                                goto ModoIntermedioMenu;//Volver a elegir si quiere hacer contrarreloj en modo dificil
+                            }break;
+                        }
+
+                    }break;
+
+            case 2:
+                {
+                    fflush(stdin);
+                    //goto Juego;
+                }break;
+
+            case 3:
+                {
+                    fflush(stdin);
+                    goto ModosMenu;//Volver a elegir el modo que quiera
+                }break;
+            }
 
         }break;//Modo difícil
 
