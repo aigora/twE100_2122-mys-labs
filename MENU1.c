@@ -3,11 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct
+{
+    char nombre[30];
+}jugador;
+
 // Menú de inicio
 int main()
 {
     //Bienvenida
-    int modo, contrarreloj;
+    int modo, contrarreloj, numerodejugadores, i;
     char a, tiempo;
     printf("\n\n\t\t\t\t------------BIENVENIDO AL JUEGO DEL LABERINTO------------\n\n");
     printf("\n\n----En este juego vamos a comprobar de lo que eres capaz, y de si estarias preparado para salir de cualquier apuro.\n\n");
@@ -25,7 +30,7 @@ int main()
 
     switch(modo)
     {
-        case 1:
+        case 1://-----MODO FÁCIL
         {
             ModoFacilMenu:
 
@@ -80,7 +85,8 @@ int main()
             case 2:
                 {
                     fflush(stdin);
-                    //goto Juego;
+                    printf("\n\n\t\t\t\t--------Has elegido el modo FACIL sin CONTRARRELOJ--------\n");
+                    //Juegar
                 }break;
 
             case 3:
@@ -90,9 +96,9 @@ int main()
                 }break;
             }
 
-        }break;//Modo fácil
+        }break;//fin modo fácil
 
-        case 2:
+        case 2://-----MODO INTERMEDIO
         {
             ModoIntermedioMenu:
 
@@ -146,7 +152,8 @@ int main()
             case 2:
                 {
                     fflush(stdin);
-                    //goto Juego;
+                    printf("\n\n\t\t\t\t--------Has elegido el modo INTERMEDIO sin CONTRARRELOJ--------\n");
+                    //Jugar
                 }break;
 
             case 3:
@@ -157,9 +164,9 @@ int main()
             }
 
 
-        }break;//Modo intermedio
+        }break;//fin modo intermedio
 
-        case 3:
+        case 3://-----MODO DIFÍCIL
         {
             ModoDificilMenu:
 
@@ -213,7 +220,8 @@ int main()
             case 2:
                 {
                     fflush(stdin);
-                    //goto Juego;
+                    printf("\n\n\t\t\t\t--------Has elegido el modo DIFICIL sin CONTRARRELOJ--------\n");
+                    //Jugar
                 }break;
 
             case 3:
@@ -223,29 +231,82 @@ int main()
                 }break;
             }
 
-        }break;//Modo difícil
+        }break;//fin modo difícil
 
-        case 4:
+        case 4://-----MODO COMPETICIÓN
         {
             ModoCompeticionMenu:
 
+            jugador jugador1, jugador2, jugador3, jugador4;
+
+
             printf("\n\n\t\t\t\t------------Has elegido el modo COMPETICION------------\n\n");
+            printf("\n----Pulse enter para continuar. . . .");
+            scanf("%c", &a);
+            printf("\n----Introduzca el numero de jugadores (2, 3, 4):");
+            scanf("%i", &numerodejugadores);
 
-        }break;//Modo competicion
+            switch(numerodejugadores)
+            {
+                case 2:
+                    {
+                        fflush(stdin);
+                        printf("\n\tJugador 1 introduzca su nombre:\t");
+                        gets(jugador1.nombre);
 
-        case 5:
+                        printf("\n\tJugador 2 introduzca su nombre:\t");
+                        gets(jugador2.nombre);
+                    }break;
+                    //jugar modo con 2 jugadores
+
+                case 3:
+                    {
+                        fflush(stdin);
+                        printf("\n\tJugador 1 introduzca su nombre:\t");
+                        gets(jugador1.nombre);
+
+                        printf("\n\tJugador 2 introduzca su nombre:\t");
+                        gets(jugador2.nombre);
+
+                        printf("\n\tJugador 3 introduzca su nombre:\t");
+                        gets(jugador3.nombre);
+                    }break;
+                    //jugar modo con 3 jugadores
+
+                case 4:
+                    {
+                        fflush(stdin);
+                        printf("\n\tJugador 1 introduzca su nombre:\t");
+                        gets(jugador1.nombre);
+
+                        printf("\n\tJugador 2 introduzca su nombre:\t");
+                        gets(jugador2.nombre);
+
+                        printf("\n\tJugador 3 introduzca su nombre:\t");
+                        gets(jugador3.nombre);
+
+                        printf("\n\tJugador 4 introduzca su nombre:\t");
+                        gets(jugador4.nombre);
+                    }break;
+                    //jugar modo con 4 jugadores
+            }
+
+        }break;//fin modo competición
+            //Jugar
+
+        case 5://-----MODO EXTREMO
         {
             ModoExtremoMenu:
 
             printf("\n\n\t\t\t\t------------Has elegido el modo EXTREMO------------\n\n");
+            //Jugar
 
-        }break;//Modo extremo
+        }break;//fin modo extremo
 
-        case 6:
+        case 6://-----SALIR DEL JUEGO
         {
             break;
-
-        }break;//Modo extremo
+        }break;
     }
 
 return 0;
