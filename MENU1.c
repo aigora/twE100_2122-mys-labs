@@ -241,7 +241,7 @@ int main()
 
 
             printf("\n\n\t\t\t\t------------Has elegido el modo COMPETICION------------\n\n");
-            printf("\n----Pulse enter para continuar. . . .");
+            printf("\n----Pulse enter para continuar. . . .\n");
             scanf("%c", &a);
             printf("\n----Introduzca el numero de jugadores (2, 3, 4):");
             scanf("%i", &numerodejugadores);
