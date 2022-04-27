@@ -8,6 +8,8 @@ typedef struct
     char nombre[30];
 }jugador;
 
+    jugador jugador1, jugador2, jugador3, jugador4;
+
 // Menú de inicio
 int main()
 {
@@ -236,8 +238,6 @@ int main()
         case 4://-----MODO COMPETICIÓN
         {
             ModoCompeticionMenu:
-
-            jugador jugador1, jugador2, jugador3, jugador4;
 
 
             printf("\n\n\t\t\t\t------------Has elegido el modo COMPETICION------------\n\n");
