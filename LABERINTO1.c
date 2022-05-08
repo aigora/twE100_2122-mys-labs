@@ -4,16 +4,6 @@
 #include <windows.h>
 void dificultadlab (int a, int b);
 
-int main ()
-{
-   int a;
-   int b;
-   scanf("%d %d", &a, &b);
-   dificultadlab (a, b);
-   return 0;
-
-}
-
 
 // a será del tamaño, segun la dificultad del laberinto
 void dificultadlab (int a, int b)
