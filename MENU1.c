@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "LABERINTO1.h"
+
 typedef struct
 {
     char nombre[30];
