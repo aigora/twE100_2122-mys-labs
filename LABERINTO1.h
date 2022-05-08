@@ -3,5 +3,5 @@
 
 void dificultadlab (int a, int b);
 
-#include  ″LABERINTO1.c″
+#include  "LABERINTO1.c"
 #endif
