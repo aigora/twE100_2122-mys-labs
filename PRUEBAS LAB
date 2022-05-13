@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <windows.h>
 
+void intercambia (char *x, char *y);
+
 int main()
 {
     char a[50][50]={"#############################",
@@ -25,7 +27,25 @@ int main()
                     "#############################",
                     };
     int x, y, i, j;
-    char tecla;
+
+    char tecla, linea, asterisco;
+
+    linea=219;
+    asterisco='#';
+    for(i=0;i<50;i++) //PARA INTERCAMBIAR ASTERISCOS
+    {
+        for(j=0;j<50;j++)
+        {
+            if(a[i][j]==asterisco)
+            {
+              a[i][j]=linea;
+            }
+           //intercambia(&asterisco,&linea);
+        }
+
+    }
+
+//aqui hay que imprimir la direccion de memoria
 
     do
     {
@@ -39,12 +59,12 @@ int main()
     //imprimimos el laberinto con las condiciones iniciales
         //el 5 es nº de casillas q vemos en vertical
         //el 5 es el nº de casillas q vemos en horizontal
-        for(i=x;i<x+5;i++)
+        for(i=x;i<x+4;i++)
         {
-            for(j=y;j<y+5;j++)
-                {
-                    printf("%c", a[i][j]);
-                }
+            for(j=y;j<y+6;j++)
+            {
+                printf("%c", a[i-1][j-3]);
+            }
             printf("\n");
         }
 
@@ -56,7 +76,7 @@ int main()
             //secuencia de movimientos de las teclas
             if(tecla == 's')
                 {
-                    if(a[x+1][y] != '#')
+                    if(a[x+1][y] != linea)
                     {
                         a[x][y] = ' ';
                         x++;
@@ -65,7 +85,7 @@ int main()
                 }
             if(tecla == 'w')
                 {
-                    if(a[x-1][y] != '#')
+                    if(a[x-1][y] != linea)
                     {
                         a[x][y] = ' ';
                         x--;
@@ -74,7 +94,7 @@ int main()
                 }
             if(tecla == 'd')
                 {
-                    if(a[x][y+1] != '#')
+                    if(a[x][y+1] != linea)
                     {
                         a[x][y] = ' ';
                         y++;
@@ -83,7 +103,7 @@ int main()
                 }
             if(tecla == 'a')
                 {
-                    if(a[x][y-1] != '#')
+                    if(a[x][y-1] != linea)
                     {
                         a[x][y] = ' ';
                         y--;
@@ -93,11 +113,11 @@ int main()
             system("cls");//para que se borre el laberinto anterior y la tecla metida para mover la bola
 
                     //imprimimos el nuevo laberinto (del mismo modo) con la posicion de la tecla añadida
-                    for(i=x;i<x+5;i++)
+                    for(i=x;i<x+4;i++)
                     {
-                        for(j=y;j<y+5;j++)
+                        for(j=y;j<y+6;j++)
                         {
-                            printf("%c", a[i][j]);
+                            printf("%c", a[i-1][j-3]);
                         }
                         printf("\n");
                     }
