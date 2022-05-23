@@ -6,9 +6,9 @@ Podran haber hasta 5 jugadores, los cuales competirán por cual es el primero en
 
 ## Integrantes del equipo
 
-[SERGIO SIMÓN HERREA sergio.simon@alumnos.upm.es
- MIQUEL DE ZAVALA PRATS miquel.zavala@alumnos.upm.es
- YERAY MUÑOZ GARCIA]
+[MIQUEL DE ZAVALA PRATS miquel.zavala@alumnos.upm.es
+ YERAY MUÑOZ GARCIA
+ SERGIO SIMÓN HERREA sergio.simon@alumnos.upm.es]
 
 ## Objetivos del trabajo
 
