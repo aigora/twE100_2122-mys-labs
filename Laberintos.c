@@ -5,7 +5,7 @@
 void dificultadlab (int a, int b);
 
 
-// a ser· del tamaÒo, segun la dificultad del laberinto
+// a ser√° del tama√±o, segun la dificultad del laberinto
 void dificultadlab (int a, int b)
 {
     int i,j;
