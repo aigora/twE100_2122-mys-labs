@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "LABERINTO1.h"
+#include "lab.h"
 
 typedef struct
 {
@@ -57,25 +57,25 @@ int main()
                         case 'a':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 10 min-------\n");
-                                //Jugar
+                                ModoFacil(20, 20);
                             }break;
 
                         case 'b':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 5 min-------\n");
-                                //Jugar
+                                ModoFacil(20, 20);
                             }break;
 
                         case 'c':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ de 1 min-------\n");
-                                //Jugar
+                                ModoFacil(20, 20);
                             }break;
 
                         case 'd':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo FACIL con CONTRARRELOJ a elegir-------\n");
-                                //Jugar
+                                ModoFacil(20, 20);
                             }break;
 
                         case 'e':
@@ -124,25 +124,25 @@ int main()
                         case 'a':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 10 min-------\n");
-                                //Jugar
+                                ModoMedio(20, 50);
                             }break;
 
                         case 'b':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 5 min-------\n");
-                                //Jugar
+                                ModoMedio(20, 50);
                             }break;
 
                         case 'c':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 1 min-------\n");
-                                //Jugar
+                                ModoMedio(20, 50);
                             }break;
 
                         case 'd':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ a elegir-------\n");
-                                //Jugar
+                                ModoMedio(20, 50);
                             }break;
 
                         case 'e':
@@ -192,25 +192,25 @@ int main()
                         case 'a':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 10 min-------\n");
-                                //Jugar
+                                ModoDificil(50, 50);
                             }break;
 
                         case 'b':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 5 min-------\n");
-                                //Jugar
+                                ModoDificil(50, 50);
                             }break;
 
                         case 'c':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ de 1 min-------\n");
-                                //Jugar
+                                ModoDificil(50, 50);
                             }break;
 
                         case 'd':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo DIFICIL con CONTRARRELOJ a elegir-------\n");
-                                //Jugar
+                                ModoDificil(50, 50);
                             }break;
 
                         case 'e':
@@ -301,7 +301,7 @@ int main()
             ModoExtremoMenu:
 
             printf("\n\n\t\t\t\t------------Has elegido el modo EXTREMO------------\n\n");
-            //Jugar
+            ModoExtremo(50, 100);
 
         }break;//fin modo extremo
 
