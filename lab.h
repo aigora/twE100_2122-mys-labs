@@ -5,7 +5,7 @@
 # include "lab.c"
 
 void ModoFacil(int a, int b);
-void ModoMedio(int a, int b, int c);
+void ModoMedio(int a, int b);
 void ModoDificil(int a, int b);
 void ModoExtremo(int a, int b);
 

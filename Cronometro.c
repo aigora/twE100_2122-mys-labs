@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <windows.h>
 
+#include "lab.h"
+
 void cronometro(int a)
 {
     int segundos = 0;
