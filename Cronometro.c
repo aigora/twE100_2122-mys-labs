@@ -1,17 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 
-int main ()
+
+int main()
+{
+    cronometro (1);
+    return 0;
+}
+
+
+
+
+void cronometro(int a)
 {
     int segundos = 0;
     int minutos = 0;
     int horas = 0;
 
+
     printf ("iniciar: ");
     system("pause ->NUL");
 
-    while (1)
+    while (horas!=a)
     {
         segundos++;
 
@@ -27,8 +37,11 @@ int main ()
 
         }
         system("cls");
-        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t[ %.2d:%.2d:%.2d ]", horas, minutos, segundos);
+        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t[ %.2d:%.2d:%.2d ]", minutos, horas, segundos);
         Sleep(1000);
     }
+
+
+
 
 }
