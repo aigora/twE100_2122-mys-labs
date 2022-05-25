@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
-int main()
-{
-    cronometro (1);
-    return 0;
-}
-
-
-
+#include <windows.h>
 
 void cronometro(int a)
 {
