@@ -19,13 +19,12 @@ void ModoFacil(int a, int b)
     while(fscanf(pf, "%c", &facil[i][j]) != EOF)
         {
             j++;
-            if(j == 20)
+            if(j == b)
                 {
                     j=0;
                     i++;
                 }
         }
-
     RecorrerLab(facil);
     fclose(pf);
 }
@@ -221,7 +220,7 @@ void RecorrerLab(char a[20][20])
     {
         printf("mete un punto inicial del plano del laberinto (mayor que 0, menor que los limites del laberinto):\n");
         scanf("%i %i", &x, &y);
-    }while(x <= 0 || y <= 0 || a[x][y] == 219);
+    }while(x <= 0 || y <= 0);
 
     system("cls");//borra la pantalla para que no se acumulen los puntos introducidos
 
