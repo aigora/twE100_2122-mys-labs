@@ -1,7 +1,8 @@
 #include "lab.h"
+#include "Cronometro.h"
 
 // a será del tamaño, segun la dificultad del laberinto
-void ModoFacil(int a, int b)
+void ModoFacil(int a, int b, int c)
 {
     char facil[20][20];
     int i, j, g, h;
@@ -25,11 +26,11 @@ void ModoFacil(int a, int b)
                     i++;
                 }
         }
-    RecorrerLab(facil);
+    RecorrerLab(facil, c);
     fclose(pf);
 }
 
-void ModoMedio(int a, int b)
+void ModoMedio(int a, int b, int c)
 {
     int i,j;
 
@@ -56,7 +57,7 @@ void ModoMedio(int a, int b)
       {"##################################################"}
       };
 
-      RecorrerLab(laberinto1);
+      RecorrerLab(laberinto1, c);
 }
 
 void ModoDificil(int a, int b)
@@ -192,10 +193,12 @@ void ModoExtremo(int a, int b)
 
 }
 
-void RecorrerLab(char a[20][20])
+void RecorrerLab(char a[20][20], int b)
 {
 
     int x, y, i, j;
+
+    cronometro(b);
 
     char tecla, linea, asterisco;
 
