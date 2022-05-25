@@ -26,9 +26,10 @@ void ModoFacil(int a, int b)
     fclose(pf);
 }
 
-void ModoMedio(int a, int b)
+void ModoMedio(int a, int b, int c)
 {
     int i,j;
+
 
       char laberinto1[20][50] ={
       {"##################################################"},
@@ -59,6 +60,7 @@ void ModoMedio(int a, int b)
                 printf("%c", laberinto1[i][j]);
             }
          printf("\n");}
+         cronometro (c);
 }
 
 void ModoDificil(int a, int b)

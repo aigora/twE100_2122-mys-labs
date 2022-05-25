@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "lab.h"
+#include "Cronometro.h"
 
 typedef struct
 {
@@ -124,25 +125,25 @@ int main()
                         case 'a':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 10 min-------\n");
-                                ModoMedio(20, 50);
+                                ModoMedio(20, 50, 10);
                             }break;
 
                         case 'b':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 5 min-------\n");
-                                ModoMedio(20, 50);
+                                ModoMedio(20, 50, 5);
                             }break;
 
                         case 'c':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ de 1 min-------\n");
-                                ModoMedio(20, 50);
+                                ModoMedio(20, 50, 1);
                             }break;
 
                         case 'd':
                             {
                                 printf("\n\n\t\t\t\t-------Has elegido el modo INTERMEDIO con CONTRARRELOJ a elegir-------\n");
-                                ModoMedio(20, 50);
+                                ModoMedio(20, 50, 100);
                             }break;
 
                         case 'e':
