@@ -172,6 +172,7 @@ void historia(int a)
 {
     int i=0;
     char letra[10000];
+    printf("\n\n");
     FILE *pf;
     pf = fopen("historia.txt", "r");
 
@@ -186,4 +187,5 @@ void historia(int a)
             printf("%c", letra[i]);
             i++;
         }
+    printf("\n\n");
 }
