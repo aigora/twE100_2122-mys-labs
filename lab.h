@@ -4,9 +4,10 @@
 # include <stdio.h>
 # include "lab.c"
 
-void ModoFacil(int a, int b);
-void ModoMedio(int a, int b);
-void ModoDificil(int a, int b);
-void ModoExtremo(int a, int b);
 
+void ModoFacil(int a);
+void ModoMedio(int a);
+void ModoDificil(int a);
+void ModoExtremo(int a);
+void RecorrerLab(int n, int m, char a[n][m]);
 #endif
