@@ -3,6 +3,7 @@
 
 # include <stdio.h>
 # include "MENU1.c"
+# include "ficheros.c"
 
 void menu(int a);
 
