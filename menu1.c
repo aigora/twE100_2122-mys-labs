@@ -119,12 +119,13 @@ void menu(int a)
                         }
                         for(i=0; i<numerodejugadores; i++)
                             {
-                                printf("\n\t---------------");
+
                                 printf("\n\tTurno de %s:", jugadores[i].nombre);
                                 ModoCompeticion(1);
                                 printf("\n\t---------------");
                             }
-                        finalhistoria(1);
+                            finalhistoria(1);
+
 
 
                     }break;
@@ -141,12 +142,12 @@ void menu(int a)
                         }
                         for(i=0; i<numerodejugadores; i++)
                             {
-                                printf("\n\t---------------");
+
                                 printf("\n\tTurno de %s:", jugadores[i].nombre);
                                 ModoCompeticion(1);
                                 printf("\n\t---------------");
                             }
-                        finalhistoria(1);
+                            finalhistoria(1);
                     }break;
 
                     //jugar modo con 3 jugadores
@@ -162,12 +163,12 @@ void menu(int a)
                         }
                         for(i=0; i<numerodejugadores; i++)
                             {
-                                printf("\n\t---------------");
+
                                 printf("\n\tTurno de %s:", jugadores[i].nombre);
                                 ModoCompeticion(1);
                                 printf("\n\t---------------");
                             }
-                        finalhistoria(1);
+                            finalhistoria(1);
 
                     }break;
                     //jugar modo con 4 jugadores
