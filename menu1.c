@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ficheros.h"
 
 typedef struct
 {
@@ -31,7 +32,7 @@ void menu(int a)
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo FACIL------------\n");
-            printf("\n\n\t\t\t\t------------Pulse 1 para jugar, 2 para volver atras------------\n Las pistas estan dentro del laberinto: ! (vas mal) .(vas bien) ? (estás llegando)");
+            printf("\n\n\t\t\t\t------------Pulse 1 para jugar, 2 para volver atras------------\n");
             scanf("%i", &tecla);
             switch(tecla)
             {
@@ -116,8 +117,15 @@ void menu(int a)
                             //scanf("%s", &jugadores[i].nombre)
                             gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
+
 
 
                     }break;
@@ -127,12 +135,19 @@ void menu(int a)
                     {
                         for (i=0; i<numerodejugadores;i++)
                         {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            //scanf("%s", &jugadores[i].nombre)
+                            gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
                     }break;
 
                     //jugar modo con 3 jugadores
@@ -141,12 +156,19 @@ void menu(int a)
                     {
                         for (i=0; i<numerodejugadores;i++)
                         {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            //scanf("%s", &jugadores[i].nombre)
+                            gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
 
                     }break;
                     //jugar modo con 4 jugadores
