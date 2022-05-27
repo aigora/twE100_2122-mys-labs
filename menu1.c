@@ -31,7 +31,7 @@ void menu(int a)
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo FACIL------------\n");
-            printf("\n\n\t\t\t\t------------Pulse 1 para jugar, 2 para volver atras------------\n");
+            printf("\n\n\t\t\t\t------------Pulse 1 para jugar, 2 para volver atras------------\n Las pistas estan dentro del laberinto: ! (vas mal) .(vas bien) ? (estás llegando)");
             scanf("%i", &tecla);
             switch(tecla)
             {
