@@ -3,11 +3,11 @@
 
 # include <stdio.h>
 # include "lab.c"
-#include "Cronometro.h"
 
-void ModoFacil(int a, int b, int c);
-void ModoMedio(int a, int b, int c);
+void menu(int a);
+void ModoFacil(int a, int b);
+void ModoMedio(int a, int b);
 void ModoDificil(int a, int b);
 void ModoExtremo(int a, int b);
-void RecorrerLab(char a[20][20], int b);
+void RecorrerLab(char a[20][20]);
 #endif
