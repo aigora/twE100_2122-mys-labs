@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ficheros.h"
 
 void historia(int a)
 {
@@ -42,4 +43,4 @@ void finalhistoria(int a)
             i++;
         }
     printf("\n\n");
-} 
+}
