@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "ficheros.h"
 
 // a será del tamaño, segun la dificultad del laberinto
 void ModoFacil(int a)
@@ -220,6 +222,9 @@ void ModoExtremo(int a)
 void RecorrerLab(int n, int m, char a[n][m])
 {
 
+    printf("Al recorrer el laberinto, iran apareciendo una serie de pistas con la siguiente notacion:\n El '.' significa que nos estamos acercando a la salida \n La '?' que estamos muy cerca \n El '!' significa que el camino no tiene salida\n");
+
+
     int x, y, i, j;
 
     char tecla, linea, asterisco;
@@ -254,10 +259,11 @@ void RecorrerLab(int n, int m, char a[n][m])
                 printf("%c", a[i-1][j-3]);
             }
             printf("\n");
+
         }
 
     //Esto va desplazando la pelota por el laberinto, mientras su posicion sea distinta de los extremos del lab (28 y 18) casillas
-    while(x>0 || y>0 || x<50 || y<50)
+    while(x>0 || y>0 || x<50 || y<50 || a[x][y]!='>')
     {
         tecla=getch();//lo mismo que el scanf para caracteres
 
@@ -266,38 +272,56 @@ void RecorrerLab(int n, int m, char a[n][m])
                 {
                     if(a[x+1][y] != '#')
                     {
+
                         a[x][y] = ' ';
                         x++;
                         a[x][y]='o';
+
+
                     }
                 }
             if(tecla == 'w')
                 {
                     if(a[x-1][y] != '#')
                     {
+
                         a[x][y] = ' ';
                         x--;
                         a[x][y]='o';
+
+
+
                     }
                 }
             if(tecla == 'd')
                 {
                     if(a[x][y+1] != '#')
                     {
+                        if(a[x][y+1] == '>')
+                        {goto end;}
+
                         a[x][y] = ' ';
                         y++;
                         a[x][y]='o';
-                    }
+
+
+                     }
                 }
             if(tecla == 'a')
                 {
                     if(a[x][y-1] != '#')
                     {
-                        a[x][y] = ' ';
+
+                        {a[x][y] = ' ';
                         y--;
                         a[x][y]='o';
+                        }
+
                     }
                 }
+
+
+
             system("cls");//para que se borre el laberinto anterior y la tecla metida para mover la bola
 
                     //imprimimos el nuevo laberinto (del mismo modo) con la posicion de la tecla añadida
@@ -312,17 +336,24 @@ void RecorrerLab(int n, int m, char a[n][m])
                         }
                         printf("\n");
                     }
-    }//fin del while
 
-    system("cls");//limpia la pantalla para hacer todo otra vez y que no se acumulen los laberitos
+
+    }//fin del while
+    end:
+    finalhistoria(1);
+
+
+    //system("cls");//limpia la pantalla para hacer todo otra vez y que no se acumulen los laberitos
+
+
 }
 
 void RecorrerLab2(int n, int m, char a[n][m])
 {
 
-    int x, y, i, j;
+    int x, y, i, j, contador=0;
 
-    char tecla, linea, asterisco;
+    char tecla, linea, asterisco, s;
 
 
 //aqui hay que imprimir la direccion de memoria
@@ -369,6 +400,7 @@ void RecorrerLab2(int n, int m, char a[n][m])
                         a[x][y] = ' ';
                         x++;
                         a[x][y]='o';
+                        contador++;
                     }
                 }
             if(tecla == 'w')
@@ -378,16 +410,23 @@ void RecorrerLab2(int n, int m, char a[n][m])
                         a[x][y] = ' ';
                         x--;
                         a[x][y]='o';
+                        contador++;
                     }
                 }
             if(tecla == 'd')
                 {
                     if(a[x][y+1] != '#')
                     {
-                        if(a[x][y+1] == '>') break;
+                        if(a[x][y+1] == '>')
+                        {
+                            printf("Has hecho %i movimientos\n", contador);
+                            system("pause");
+                            break;
+                        }
                         a[x][y] = ' ';
                         y++;
                         a[x][y]='o';
+                        contador++;
                     }
                 }
             if(tecla == 'a')
@@ -397,6 +436,7 @@ void RecorrerLab2(int n, int m, char a[n][m])
                         a[x][y] = ' ';
                         y--;
                         a[x][y]='o';
+                        contador++;
                     }
                 }
             if(a[x][y] == '>')break;
