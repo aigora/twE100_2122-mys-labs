@@ -1,6 +1,6 @@
 	------------------------BIENVENIDO AL JUEGO DEL LABERINTO-------------------------
 
-		Bienvenido jugador, estás apunto de encaminarte en una increíble aventura.
+		Bienvenido jugador, estas apunto de encaminarte en una increible aventura.
 	     Remontandonos a la epoca de los 80, un grupo de amigos robaron el oro de un 
 	banco muy con una tecnica muy eleborada, la cual hasta los policias se sorprendieron.
 
