@@ -1,32 +1,44 @@
-#include "lab.h"
+#include "lab.h" 
+/*
+#include <stdio.h>  //para probarla funcion recorrer
 
+int main ()
+{
+    ModoFacil(20,20);
+
+    return 0;
+}
+*/
 // a será del tamaño, segun la dificultad del laberinto
 void ModoFacil(int a, int b)
 {
-    char facil[20][20];
-    int i, j, g, h;
 
-    FILE *pf;
-    pf = fopen("ficherolaberintos.txt", "r");
-    if(pf == NULL)
-        {
-            printf("Error al encontrar el archivo.");
-            exit(-1);
-        }
+int i,j;
 
-        i=0;
-        j=0;
-    while(fscanf(pf, "%c", &facil[i][j]) != EOF)
-        {
-            j++;
-            if(j == b)
-                {
-                    j=0;
-                    i++;
-                }
-        }
-    RecorrerLab(facil);
-    fclose(pf);
+      char laberinto1[20][20] ={
+      {"####################"},
+      {"## ###     #########"},
+      {"## ###  ## ##     ##"},
+      {"##      ## #####  ##"},
+      {"########## ## ##  ##"},
+      {"##         ## ##  ##"},
+      {"##  ######### ##  ##"},
+      {"##  ######### ##  ##"},
+      {"##            ##  ##"},
+      {"############# ##  ##"},
+      {"############# ##  ##"},
+      {"##                ##"},
+      {"############# ######"},
+      {"############# ######"},
+      {"## ##########     ##"},
+      {"## ########## ######"},
+      {"##            ######"},
+      {"#############      >"},
+      {"####################"},
+      {"####################"}
+      };
+
+   RecorrerLab(laberinto1);
 }
 
 void ModoMedio(int a, int b)
@@ -199,6 +211,7 @@ void RecorrerLab(char a[20][20])
 
     char tecla, linea, asterisco;
 
+    /*
     linea=219;
     asterisco='#';
     for(i=0;i<50;i++) //PARA INTERCAMBIAR ASTERISCOS
@@ -213,6 +226,7 @@ void RecorrerLab(char a[20][20])
         }
 
     }
+    */
 
 //aqui hay que imprimir la direccion de memoria
 
@@ -220,7 +234,9 @@ void RecorrerLab(char a[20][20])
     {
         printf("mete un punto inicial del plano del laberinto (mayor que 0, menor que los limites del laberinto):\n");
         scanf("%i %i", &x, &y);
-    }while(x <= 0 || y <= 0 && a[x][y]==' ');
+    }while(x <= 0 || y <= 0 || a[x][y]=='#');
+    a[x][y]='o';
+    printf("%c", a[x][y]);
 
     system("cls");//borra la pantalla para que no se acumulen los puntos introducidos
 
@@ -237,14 +253,14 @@ void RecorrerLab(char a[20][20])
         }
 
     //Esto va desplazando la pelota por el laberinto, mientras su posicion sea distinta de los extremos del lab (28 y 18) casillas
-    while(x!=20 || y!= 20)
+    while(x>0 || y>0 || x<50 || y<50)
     {
         tecla=getch();//lo mismo que el scanf para caracteres
 
             //secuencia de movimientos de las teclas
             if(tecla == 's')
                 {
-                    if(a[x+1][y] != linea)
+                    if(a[x+1][y] != '#')
                     {
                         a[x][y] = ' ';
                         x++;
@@ -253,7 +269,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'w')
                 {
-                    if(a[x-1][y] != linea)
+                    if(a[x-1][y] != '#')
                     {
                         a[x][y] = ' ';
                         x--;
@@ -262,7 +278,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'd')
                 {
-                    if(a[x][y+1] != linea)
+                    if(a[x][y+1] != '#')
                     {
                         a[x][y] = ' ';
                         y++;
@@ -271,7 +287,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'a')
                 {
-                    if(a[x][y-1] != linea)
+                    if(a[x][y-1] != '#')
                     {
                         a[x][y] = ' ';
                         y--;
@@ -293,4 +309,3 @@ void RecorrerLab(char a[20][20])
 
     system("cls");//limpia la pantalla para hacer todo otra vez y que no se acumulen los laberitos
 }
-
