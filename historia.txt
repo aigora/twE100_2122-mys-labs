@@ -1,0 +1,20 @@
+	------------------------BIENVENIDO AL JUEGO DEL LABERINTO-------------------------
+
+		Bienvenido jugador, estás apunto de encaminarte en una increíble aventura.
+	     Remontandonos a la epoca de los 80, un grupo de amigos robaron el oro de un 
+	banco muy con una tecnica muy eleborada, la cual hasta los policias se sorprendieron.
+
+				 Por ese motivo, el comisario les propuso un reto: 
+
+			    	"Os vamos a esconder el oro que habeis robado
+  en distintos laberintos, lo podeis recuperar debido a vuestro ingenio, eso 
+		si, el que lo encuetre con menor numero de movimientos se lo lleva,
+					      	el resto, pa' la carcel!!".
+
+	Y así es como un grupo de jovenes se enfrentaran entre ellos para salvarse de la carcel,
+					o de ganar mas de 1000 lingotes de oro.
+	
+	Los laberintos son de distintas dificultades y dimensiones, aunque los jugadores tendran
+				diferentes pistas para orientarse dentro de estos.
+
+		----------------Mucha suerte jugadores, que comience el juego----------------
