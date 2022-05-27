@@ -42,4 +42,4 @@ void finalhistoria(int a)
             i++;
         }
     printf("\n\n");
-}
+} 
