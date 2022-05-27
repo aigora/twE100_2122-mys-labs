@@ -3,6 +3,7 @@
 int main ()
 {
     ModoMedio(50,50);
+
     return 0;
 }
 
@@ -57,7 +58,7 @@ void ModoMedio(int a, int b)
       {"########## ############          #################"},
       {"########## ############          #################"},
       {"###        ############                          >"},
-      {"##################################################"}
+      {"##################################################"},
       };
 
    RecorrerLab(laberinto1);
@@ -198,7 +199,7 @@ void ModoExtremo(int a, int b)
 }
 
 
-void RecorrerLab(char a[20][20])
+void RecorrerLab(char a[50][50])
 {
 
     int x, y, i, j;
@@ -206,7 +207,7 @@ void RecorrerLab(char a[20][20])
 
     char tecla, linea, asterisco;
 
-    linea=219;
+    /*linea=219;
     asterisco='#';
     for(i=0;i<50;i++) //PARA INTERCAMBIAR ASTERISCOS
     {
@@ -220,7 +221,7 @@ void RecorrerLab(char a[20][20])
            //intercambia(&asterisco,&linea);
         }
 
-    }
+    }*/
 
 //aqui hay que imprimir la direccion de memoria
 
@@ -245,14 +246,16 @@ void RecorrerLab(char a[20][20])
         }
 
     //Esto va desplazando la pelota por el laberinto, mientras su posicion sea distinta de los extremos del lab (28 y 18) casillas
-    while(x!=28 || y!= 18)
+
+    //while(x!=50 || y!= 50)
+    while(x>0 || y>0 || x<50 || y<50)
     {
         tecla=getch();//lo mismo que el scanf para caracteres
 
             //secuencia de movimientos de las teclas
             if(tecla == 's')
                 {
-                    if(a[x+1][y] != linea)
+                    if(a[x+1][y] != '#')
                     {
                         a[x][y] = ' ';
                         x++;
@@ -261,7 +264,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'w')
                 {
-                    if(a[x-1][y] != linea)
+                    if(a[x-1][y] != '#')
                     {
                         a[x][y] = ' ';
                         x--;
@@ -270,7 +273,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'd')
                 {
-                    if(a[x][y+1] != linea)
+                    if(a[x][y+1] != '#')
                     {
                         a[x][y] = ' ';
                         y++;
@@ -279,7 +282,7 @@ void RecorrerLab(char a[20][20])
                 }
             if(tecla == 'a')
                 {
-                    if(a[x][y-1] != linea)
+                    if(a[x][y-1] != '#')
                     {
                         a[x][y] = ' ';
                         y--;
