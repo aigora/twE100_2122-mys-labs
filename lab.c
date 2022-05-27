@@ -1,23 +1,15 @@
-#include "lab.h" 
-/*
-#include <stdio.h>  //para probarla funcion recorrer
+#include <stdio.h>
 
-int main ()
-{
-    ModoFacil(20,20);
-
-    return 0;
-}
-*/
 // a será del tamaño, segun la dificultad del laberinto
-void ModoFacil(int a, int b)
+void ModoFacil(int a)
 {
 
 int i,j;
 
+
       char laberinto1[20][20] ={
       {"####################"},
-      {"## ###     #########"},
+      {"######     #########"},
       {"## ###  ## ##     ##"},
       {"##      ## #####  ##"},
       {"########## ## ##  ##"},
@@ -35,19 +27,19 @@ int i,j;
       {"##            ######"},
       {"#############      >"},
       {"####################"},
-      {"####################"}
+      {"####################"},
       };
 
-   RecorrerLab(laberinto1);
+   RecorrerLab(20, 20, laberinto1);
 }
 
-void ModoMedio(int a, int b)
+void ModoMedio(int a)
 {
     int i,j;
 
       char laberinto1[20][50] ={
       {"##################################################"},
-      {"##o###                                          ##"},
+      {"## ###                                          ##"},
       {"## ###  #################### ##### ############ ##"},
       {"##      #################### ##### ###########  ##"},
       {"#####################        ##### ##########  ###"},
@@ -63,21 +55,22 @@ void ModoMedio(int a, int b)
       {"##### #######      ############# #################"},
       {"#####      ##################### #################"},
       {"########## ############          #################"},
-      {"########## ############ ######## #################"},
-      {"###        ############                          >"},
-      {"##################################################"}
+      {"########## ############ ########                 >"},
+      {"##################################################"},
+      {"##################################################"},
       };
 
-      RecorrerLab(laberinto1);
+      RecorrerLab(20, 50, laberinto1);
 }
 
-void ModoDificil(int a, int b)
+void ModoDificil(int a)
 {
     int i,j;
 
+
       char laberinto1[50][50] ={
       {"##################################################"},
-      {"##o######                     ####################"},
+      {"## ######                     ####################"},
       {"## ###### ################### #########       ####"},
       {"##        #####      #######  ######### ##### ####"},
       {"#################### ######  ########## ##### ####"},
@@ -129,17 +122,13 @@ void ModoDificil(int a, int b)
 
                            };
 
-   for (i=0; i<50; i++){
-        for (j=0; j<50; j++)
-            {
-                printf("%c", laberinto1[i][j]);
-            }
-         printf("\n");}
+  RecorrerLab(50, 50, laberinto1);
 }
 
-void ModoExtremo(int a, int b)
+void ModoExtremo(int a)
 {
     int i,j;
+
 
       char laberinto1[50][100] ={
       {"####################################################################################################"},
@@ -194,46 +183,28 @@ void ModoExtremo(int a, int b)
       {"####################################################################################################"},
 
                            };
-
-   for (i=0; i<50; i++){
-        for (j=0; j<100; j++)
-            {
-                printf("%c", laberinto1[i][j]);
-            }
-         printf("\n");}
+    RecorrerLab(50,100,laberinto1);
 
 }
 
-void RecorrerLab(char a[20][20])
+void RecorrerLab(int n, int m, char a[n][m])
 {
 
     int x, y, i, j;
 
     char tecla, linea, asterisco;
 
-    /*
-    linea=219;
-    asterisco='#';
-    for(i=0;i<50;i++) //PARA INTERCAMBIAR ASTERISCOS
-    {
-        for(j=0;j<50;j++)
-        {
-            if(a[i][j]==asterisco)
-            {
-              a[i][j]=linea;
-            }
-           //intercambia(&asterisco,&linea);
-        }
-
-    }
-    */
 
 //aqui hay que imprimir la direccion de memoria
 
     do
     {
-        printf("mete un punto inicial del plano del laberinto (mayor que 0, menor que los limites del laberinto):\n");
+        printf("\n\n\tIntroduce un punto inicial del plano del laberinto (mayor que 0, menor que los limites del laberinto):\n");
         scanf("%i %i", &x, &y);
+        if(a[x][y] == '#')
+            {
+                printf("\n\tHas dado con un muro\n");
+            }
     }while(x <= 0 || y <= 0 || a[x][y]=='#');
     a[x][y]='o';
     printf("%c", a[x][y]);
@@ -243,9 +214,12 @@ void RecorrerLab(char a[20][20])
     //imprimimos el laberinto con las condiciones iniciales
         //el 5 es nº de casillas q vemos en vertical
         //el 5 es el nº de casillas q vemos en horizontal
-        for(i=x;i<x+4;i++)
+        printf("\n");
+        printf("\n");
+        for(i=x;i<x+5;i++)
         {
-            for(j=y;j<y+6;j++)
+            printf("\t");
+            for(j=y;j<y+10;j++)
             {
                 printf("%c", a[i-1][j-3]);
             }
@@ -297,9 +271,12 @@ void RecorrerLab(char a[20][20])
             system("cls");//para que se borre el laberinto anterior y la tecla metida para mover la bola
 
                     //imprimimos el nuevo laberinto (del mismo modo) con la posicion de la tecla añadida
-                    for(i=x;i<x+4;i++)
+                    printf("\n");
+                    printf("\n");
+                    for(i=x;i<x+5;i++)
                     {
-                        for(j=y;j<y+6;j++)
+                        printf("\t");
+                        for(j=y;j<y+10;j++)
                         {
                             printf("%c", a[i-1][j-3]);
                         }
