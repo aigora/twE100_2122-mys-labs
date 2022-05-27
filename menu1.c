@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ficheros.h"
 
 typedef struct
 {
@@ -116,8 +117,14 @@ void menu(int a)
                             //scanf("%s", &jugadores[i].nombre)
                             gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+                                printf("\n\t---------------");
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                        finalhistoria(1);
 
 
                     }break;
@@ -127,12 +134,19 @@ void menu(int a)
                     {
                         for (i=0; i<numerodejugadores;i++)
                         {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            //scanf("%s", &jugadores[i].nombre)
+                            gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+                                printf("\n\t---------------");
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                        finalhistoria(1);
                     }break;
 
                     //jugar modo con 3 jugadores
@@ -141,12 +155,19 @@ void menu(int a)
                     {
                         for (i=0; i<numerodejugadores;i++)
                         {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            //scanf("%s", &jugadores[i].nombre)
+                            gets(jugadores[i].nombre);
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+                                printf("\n\t---------------");
+                                printf("\n\tTurno de %s:", jugadores[i].nombre);
+                                ModoCompeticion(1);
+                                printf("\n\t---------------");
+                            }
+                        finalhistoria(1);
 
                     }break;
                     //jugar modo con 4 jugadores
