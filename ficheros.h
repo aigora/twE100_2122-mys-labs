@@ -5,5 +5,6 @@
 # include "ficheros.c"
 
 void historia(int a);
+void finalhistoria(int a);
 
 #endif
