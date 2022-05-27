@@ -18,7 +18,7 @@ void menu(int a)
     ModosMenu:
     do
     {
-        printf("\n\n\tEscoja uno del los siguientes modos de juego:\n \n\t\t1.Modo facil\n\t\t2.Modo intermedio\n\t\t3.Modo dificil\n\t\t4.Modo competicion\n\t\t5.SALIR DEL JUEGO\n");
+        printf("\n\n\tEscoja uno del los siguientes modos de juego:\n\n\t\t1.Modo facil\n\t\t2.Modo intermedio\n\t\t3.Modo dificil\n\t\t4.Modo competicion\n\t\t5.Modo extremo\n\t\t6.SALIR DEL JUEGO\n");
         fflush(stdin);
         scanf("%i", &modo);
     }while(modo != 1 && modo != 2 && modo != 3 && modo != 4 && modo != 5 && modo != 6);//Elegir modo
@@ -37,7 +37,7 @@ void menu(int a)
             {
                 case 1:
                     {
-                        //jugar
+                        ModoFacil(1);
                     }break;
                 case 2:
                     {
@@ -59,7 +59,7 @@ void menu(int a)
             {
                 case 1:
                     {
-                        //jugar
+                        ModoMedio(1);
                     }break;
                 case 2:
                     {
@@ -81,7 +81,7 @@ void menu(int a)
             {
                 case 1:
                     {
-                        //jugar
+                        ModoDificil(1);
                     }break;
                 case 2:
                     {
@@ -91,7 +91,7 @@ void menu(int a)
             }
         }break;//fin modo difícil
 
-case 4://-----MODO COMPETICIÓN
+        case 4://-----MODO COMPETICIÓN
         {
             ModoCompeticionMenu:
 
@@ -103,12 +103,6 @@ case 4://-----MODO COMPETICIÓN
             scanf("%i", &numerodejugadores);
 
             jugador jugadores[numerodejugadores]; //aqui hacer vector de estructuras
-
-            /*for (i=0; i<4; i++) //lo inicializamos?
-            {
-                jugadores[i].nombre = {'0'};
-
-            }*/
 
             switch(numerodejugadores)
             {
@@ -159,10 +153,31 @@ case 4://-----MODO COMPETICIÓN
             }
 
         }break;//fin modo competición
-            //Jugar
 
 
-        case 5://-----SALIR DEL JUEGO
+        case 5://-----Modo extremo
+        {
+            ModoExtremoMenu:
+
+            fflush(stdin);
+            printf("\n\n\t\t\t\t------------Has elegido el modo EXTREMO------------\n");
+            printf("\n\n\t\t\t\t------------Pulse 1 para jugar, 2 para volver atras------------\n");
+            scanf("%i", &tecla);
+            switch(tecla)
+            {
+                case 1:
+                    {
+                        ModoExtremo(1);
+                    }break;
+                case 2:
+                    {
+                        fflush(stdin);
+                        goto ModosMenu;//Volver a elegir el modo que quiera
+                    }break;
+            }
+        }break;
+
+        case 6://-----SALIR DEL JUEGO
         {
             break;
         }break;
