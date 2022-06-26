@@ -6,5 +6,7 @@
 
 void historia(int a);
 void finalhistoria(int a);
+void valoracionw(int a);
+
 
 #endif
