@@ -95,31 +95,6 @@ typedef struct
 
 //jugadores jugador[numerodejugadores]; //aqui hacer vector de estructuras
 
-void guardarpartida(int a)
-{
-  int respuesta=0;
-
-printf("¿Quieres guardar la partida?\n 1. Si\n 2. No");
-           scanf("%c", &respuesta);
-
-                            switch (respuesta)
-
-                            {
-                                case '1':
-                                partidas(RecorrerLab2); //la funcion partidas te pide el valor del contador calculado anteriormente
-                                break;
-
-                                case '2':
-                                printf("La partida no se ha guardado");
-                                break;
-
-                                default:
-                                    printf("No se ha introducido el valor correctamente");
-                                    break;
-                            }
-}
-
-
 
 void partidas(int a) //funcion escritura, te escribe la partida de cada persona (necesita un contandor del numero de movimientos
 
@@ -128,9 +103,10 @@ void partidas(int a) //funcion escritura, te escribe la partida de cada persona 
 
     //aqui damos valores a la estructura
 
+    int i=0;
     jugadores jugador1;
 
-    printf("Como quieres llamar al jugador de esta partida:");
+    printf("Como quieres llamar al jugador de esta partida:\n");
     scanf("%s", jugador1.nombre);
 
     jugador1.movimientos = a;
@@ -160,15 +136,44 @@ void partidas(int a) //funcion escritura, te escribe la partida de cada persona 
     fprintf(pf, "\n");
 
     fprintf(pf,"Número de movimientos:\n");
-    fprinf(pf,"%i", jugador1.movimientos);
+    fprintf(pf,"%i", jugador1.movimientos);
     fprintf(pf, "\n");
 
+    fprintf(pf, "Valoracion del laberinto:\n\n");
+    i=0;
     while(jugador1.experiencia[i] != '\0')
         {fprintf(pf, "%c", jugador1.experiencia[i]);
         i++;}
+    fprintf(pf, "\n");
+
 
         fclose(pf);
     }
     //printf("\n\n");
 }
 
+
+void guardarpartida(int a)
+{
+  int respuesta=0;
+
+printf("Quieres guardar la partida?\n\n 1. Si\n 2. No\n\n");
+           scanf(" %c", &respuesta);
+
+                            switch (respuesta)
+
+                            {
+                                case '1':
+                                partidas(ModoCompeticion(1)); //la funcion partidas te pide el valor del contador calculado anteriormente
+                                break;
+
+                                case '2':
+                                printf("El juego comienza pero no se guardara...\n");
+                                ModoCompeticion(1); //aqui igual tengo que hacer otro modo que no te devuelva nada (con return 0) o hacer un if
+                                break;
+
+                                default:
+                                    printf("No se ha introducido el valor correctamente");
+                                    break;
+                            }
+}
