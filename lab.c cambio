@@ -127,13 +127,13 @@ void ModoDificil(int a)
   RecorrerLab(50, 50, laberinto1);
 }
 
-void ModoCompeticion(char a[])
+int ModoCompeticion(int a)
 {
     int i,j;
 
       char laberinto1[20][50] ={ //he puesto > para facilitar
       {"##################################################"},
-      {"##    >       ####################################"},
+      {"##            ####################################"},
       {"### ######### ####################################"},
       {"### #########                      ###############"},
       {"### # ############# ######## ##### ###############"},
@@ -154,7 +154,8 @@ void ModoCompeticion(char a[])
       {"##################################################"},
       };
 
-      RecorrerLab2(20, 50, laberinto1);
+      return RecorrerLab2(20, 50, laberinto1);
+
 }
 
 void ModoExtremo(int a)
@@ -354,7 +355,7 @@ int RecorrerLab2(int n, int m, char a[n][m]) //te devuelve un contador
 
     int x, y, i, j, contador=0;
 
-    char tecla, linea, asterisco, s, respuesta;
+    char tecla, asterisco;
 
 
 //aqui hay que imprimir la direccion de memoria
@@ -368,6 +369,7 @@ int RecorrerLab2(int n, int m, char a[n][m]) //te devuelve un contador
                 printf("\n\tHas dado con un muro\n");
             }
     }while(x <= 0 || y <= 0 || a[x][y]=='#');
+
     a[x][y]='o';
     printf("%c", a[x][y]);
 
@@ -421,18 +423,15 @@ int RecorrerLab2(int n, int m, char a[n][m]) //te devuelve un contador
                         if(a[x][y+1] == '>')
                         {
                             printf("Has hecho %i movimientos\n", contador);
-                            //return contador;
-                            }
-
                             system("pause");
                             break;
-
                         }
                         a[x][y] = ' ';
                         y++;
                         a[x][y]='o';
                         contador++;
                     }
+                }
 
             if(tecla == 'a')
                 {
@@ -444,7 +443,7 @@ int RecorrerLab2(int n, int m, char a[n][m]) //te devuelve un contador
                         contador++;
                     }
                 }
-            if(a[x][y] == '>')break;
+            //if(a[x][y] == '>')break;
             system("cls");//para que se borre el laberinto anterior y la tecla metida para mover la bola
 
                     //imprimimos el nuevo laberinto (del mismo modo) con la posicion de la tecla añadida
@@ -460,9 +459,9 @@ int RecorrerLab2(int n, int m, char a[n][m]) //te devuelve un contador
                         printf("\n");
                     }
     }//fin del while
-    return contador;
 
     system("cls");//limpia la pantalla para hacer todo otra vez y que no se acumulen los laberitos
+    return contador;
 }
 
  //PONER AQUI COMO EN RECORRER LAB 1 QUE CUANDO ACABA HACER ESTO
