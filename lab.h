@@ -7,8 +7,8 @@
 void ModoFacil(int a);
 void ModoMedio(int a);
 void ModoDificil(int a);
-void ModoCompeticion(int a);
+int ModoCompeticion(int a);
 void ModoExtremo(int a);
 void RecorrerLab(int n, int m, char a[n][m]);
-void RecorrerLab2(int n, int m, char a[n][m]);
+int RecorrerLab2(int n, int m, char a[n][m]);
 #endif
