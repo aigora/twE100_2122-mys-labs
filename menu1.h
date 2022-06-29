@@ -5,6 +5,6 @@
 # include "MENU1.c"
 
 void menu(int a);
+void modomenu(int a);
 
 #endif
- 
