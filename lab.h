@@ -12,3 +12,4 @@ void ModoExtremo(int a);
 void RecorrerLab(int n, int m, char a[n][m]);
 void RecorrerLab2(int n, int m, char a[n][m]);
 #endif
+
