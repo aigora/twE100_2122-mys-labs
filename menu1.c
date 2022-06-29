@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include "ficheros.h"
+# include "lab.h"
 
 typedef struct
 {
     char nombre[30];
 }jugador;
 
-void menu(int a)
-{
 
+void modomenu (int a)
+{
 // Menú de inicio
 
     //Bienvenida
@@ -16,7 +17,7 @@ void menu(int a)
     char b, tiempo;
 
     //Modos de juego
-    ModosMenu:
+
     do
     {
         printf("\n\n\tEscoja uno del los siguientes modos de juego:\n\n\t\t1.Modo facil\n\t\t2.Modo intermedio\n\t\t3.Modo dificil\n\t\t4.Modo competicion\n\t\t5.Modo extremo\n\t\t6.SALIR DEL JUEGO\n");
@@ -28,7 +29,6 @@ void menu(int a)
     {
         case 1://-----MODO FÁCIL
         {
-            ModoFacilMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo FACIL------------\n");
@@ -43,14 +43,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo fácil
 
         case 2://-----MODO INTERMEDIO
         {
-           ModoIntermedioMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo INTERMEDIO------------\n");
@@ -65,14 +64,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo intermedio
 
         case 3://-----MODO DIFÍCIL
         {
-            ModoDificilMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo DIFICIL------------\n");
@@ -87,14 +85,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo difícil
 
         case 4://-----MODO COMPETICIÓN
         {
-            ModoCompeticionMenu:
 
 
             printf("\n\n\t\t\t\t------------Has elegido el modo COMPETICION------------\n\n");
@@ -179,7 +176,6 @@ void menu(int a)
 
         case 5://-----Modo extremo
         {
-            ModoExtremoMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo EXTREMO------------\n");
@@ -194,7 +190,7 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;
@@ -204,4 +200,9 @@ void menu(int a)
             break;
         }break;
     }
+}
+
+void menu(int a)
+{
+    modomenu(1);
 }
