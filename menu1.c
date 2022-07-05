@@ -3,10 +3,11 @@
 
 typedef struct
 {
-    char nombre[30];
+    char name[8];
 }jugador;
 
-void menu(int a)
+
+void modomenu(int a)
 {
 
 // Menú de inicio
@@ -28,7 +29,6 @@ void menu(int a)
     {
         case 1://-----MODO FÁCIL
         {
-            ModoFacilMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo FACIL------------\n");
@@ -43,14 +43,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo fácil
 
         case 2://-----MODO INTERMEDIO
         {
-           ModoIntermedioMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo INTERMEDIO------------\n");
@@ -65,14 +64,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo intermedio
 
         case 3://-----MODO DIFÍCIL
         {
-            ModoDificilMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo DIFICIL------------\n");
@@ -87,14 +85,13 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;//fin modo difícil
 
         case 4://-----MODO COMPETICIÓN
         {
-            ModoCompeticionMenu:
 
 
             printf("\n\n\t\t\t\t------------Has elegido el modo COMPETICION------------\n\n");
@@ -103,25 +100,31 @@ void menu(int a)
             printf("\n----Introduzca el numero de jugadores (2, 3, 4):\n");
             scanf("%i", &numerodejugadores);
 
-            jugador jugadores[numerodejugadores]; //aqui hacer vector de estructuras
+            int i=0;
+
+            jugador nombre[i]; //se declara el vector de estructuras para los nombres
+            jugador nombre1[i];
+            jugador nombre2[i]; //si no se declaran tres vectores de estructuras para cada caso no funciona
 
             switch(numerodejugadores)
             {
                 case 2:
                     {
 
-                        for (i=0; i<numerodejugadores;i++)
+                        for(i=0; i<numerodejugadores;i++)
                         {
                             fflush(stdin);
                             printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                            //scanf("%s", &jugadores[i].nombre)
-                            gets(jugadores[i].nombre);
+                            scanf(" %s", &nombre[i].name);
+
+
                         }
+
                         for(i=0; i<numerodejugadores; i++)
                             {
 
-                                printf("\n\tTurno de %s:", jugadores[i].nombre);
-                                ModoCompeticion(1);
+                                printf("\n\t Turno de %s\n:", nombre[i].name); //esto no lo coge
+                                guardarpartida(1);
                                 printf("\n\t---------------");
                             }
                             finalhistoria(1);
@@ -129,48 +132,64 @@ void menu(int a)
 
 
                     }break;
-                    //jugar modo con 2 jugadores
+
 
                 case 3:
                     {
+
                         for (i=0; i<numerodejugadores;i++)
                         {
                             fflush(stdin);
                             printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                            //scanf("%s", &jugadores[i].nombre)
-                            gets(jugadores[i].nombre);
+                            scanf(" %s", &nombre1[i].name);
+
+
                         }
+
                         for(i=0; i<numerodejugadores; i++)
                             {
 
-                                printf("\n\tTurno de %s:", jugadores[i].nombre);
-                                ModoCompeticion(1);
+                                printf("\n\t Turno de %s\n:", nombre1[i].name); //esto no lo coge
+                                guardarpartida(1);
                                 printf("\n\t---------------");
                             }
                             finalhistoria(1);
+
+
+
                     }break;
 
                     //jugar modo con 3 jugadores
 
                 case 4:
                     {
+
                         for (i=0; i<numerodejugadores;i++)
                         {
                             fflush(stdin);
                             printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                            //scanf("%s", &jugadores[i].nombre)
-                            gets(jugadores[i].nombre);
+                            scanf(" %s", &nombre2[i].name);
+
+
                         }
+
                         for(i=0; i<numerodejugadores; i++)
                             {
 
-                                printf("\n\tTurno de %s:", jugadores[i].nombre);
-                                ModoCompeticion(1);
+                                printf("\n\t Turno de %s\n:", nombre2[i].name); //esto no lo coge
+                                guardarpartida(1);
                                 printf("\n\t---------------");
                             }
                             finalhistoria(1);
 
+
+
                     }break;
+
+                    default:
+                    {
+                        printf("No se puede jugar con ese numero de jugadores\n");
+                    }
                     //jugar modo con 4 jugadores
             }
 
@@ -179,7 +198,6 @@ void menu(int a)
 
         case 5://-----Modo extremo
         {
-            ModoExtremoMenu:
 
             fflush(stdin);
             printf("\n\n\t\t\t\t------------Has elegido el modo EXTREMO------------\n");
@@ -194,7 +212,7 @@ void menu(int a)
                 case 2:
                     {
                         fflush(stdin);
-                        goto ModosMenu;//Volver a elegir el modo que quiera
+                        modomenu(1);//Volver a elegir el modo que quiera
                     }break;
             }
         }break;
@@ -204,4 +222,9 @@ void menu(int a)
             break;
         }break;
     }
+}
+
+void menu(int a)
+{
+    modomenu(1);
 }
