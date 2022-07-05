@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include "ficheros.h"
 
 typedef struct
 {
-    char nombre[30];
+    char name[8];
 }jugador;
+
 
 void menu(int a)
 {
@@ -102,53 +104,96 @@ void menu(int a)
             printf("\n----Introduzca el numero de jugadores (2, 3, 4):\n");
             scanf("%i", &numerodejugadores);
 
-            jugador jugadores[numerodejugadores]; //aqui hacer vector de estructuras
+            int i=0;
+
+            jugador nombre[i]; //se declara el vector de estructuras para los nombres
+            jugador nombre1[i];
+            jugador nombre2[i]; //si no se declaran tres vectores de estructuras para cada caso no funciona
 
             switch(numerodejugadores)
             {
                 case 2:
                     {
 
+                        for(i=0; i<numerodejugadores;i++)
+                        {
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            scanf(" %s", &nombre[i].name);
+
+
+                        }
+
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\t Turno de %s\n:", nombre[i].name); //esto no lo coge
+                                guardarpartida(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
+
+
+
+                    }break;
+
+
+                case 3:
+                    {
+
                         for (i=0; i<numerodejugadores;i++)
                         {
                             fflush(stdin);
                             printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                            //scanf("%s", &jugadores[i].nombre)
-                            gets(jugadores[i].nombre);
+                            scanf(" %s", &nombre1[i].name);
+
+
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\t Turno de %s\n:", nombre1[i].name); //esto no lo coge
+                                guardarpartida(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
 
 
-                    }break;
-                    //jugar modo con 2 jugadores
 
-                case 3:
-                    {
-                        for (i=0; i<numerodejugadores;i++)
-                        {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
-                        }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
                     }break;
 
                     //jugar modo con 3 jugadores
 
                 case 4:
                     {
+
                         for (i=0; i<numerodejugadores;i++)
                         {
-                        fflush(stdin);
-                        printf("\n\tJugador %i introduzca su nombre:\t", i+1);
-                        gets(jugadores[i].nombre);
+                            fflush(stdin);
+                            printf("\n\tJugador %i introduzca su nombre:\t", i+1);
+                            scanf(" %s", &nombre2[i].name);
+
+
                         }
-                        printf("\n");
-                        printf("Has elegido correctamente el numero de jugadores :) ");
+
+                        for(i=0; i<numerodejugadores; i++)
+                            {
+
+                                printf("\n\t Turno de %s\n:", nombre2[i].name); //esto no lo coge
+                                guardarpartida(1);
+                                printf("\n\t---------------");
+                            }
+                            finalhistoria(1);
+
+
 
                     }break;
+
+                    default:
+                    {
+                        printf("No se puede jugar con ese numero de jugadores\n");
+                    }
                     //jugar modo con 4 jugadores
             }
 
