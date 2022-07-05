@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lab.h"
 #include "menu1.h"
 #include "ficheros.h"
@@ -15,3 +16,4 @@ int main()
 
    return 0;
 }
+
