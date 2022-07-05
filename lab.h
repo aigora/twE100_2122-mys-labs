@@ -2,7 +2,7 @@
 #define _LAB_H_
 
 # include <stdio.h>
-# include "lab.c"
+//# include "lab.c"
 
 void ModoFacil(int a);
 void ModoMedio(int a);
